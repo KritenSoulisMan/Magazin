@@ -13,7 +13,7 @@ namespace Magazin
             // Задача: создать подобие работы БД магазина, используя массивы, как хранилище данных. Мы выступаем в роли покупателя и продовца одновременно.
             // В задаче должно присутствовать 2 массива, 1 цена и 2 название товара, сопоставление товара и цены должны быть в ID 1 к 1.
 
-            // Старт
+            // Старт программы
             #region
             Console.WriteLine("Старт програмы...");
             Console.Write("Програма находится на Раней стадии разработки...\n" +
@@ -41,7 +41,6 @@ namespace Magazin
         List<Item> Items = new List<Item>();
         List<Cart> СartItems = new List<Cart>();
 
-
         // Главное меню магазина
         #region
         public void MainMenu()
@@ -52,8 +51,9 @@ namespace Magazin
                 Console.Write("Успешный старт!\n" +
                     "1. Список продуктов\n" +
                     "2. Добавить продукт\n" +
-                    "3. Купить продукт\n" +
-                    "4. Корзина товаров\n" +
+                    "3. Удалить продукт\n" +
+                    "4. Купить продукт\n" +
+                    "5. Корзина товаров\n" +
                     "Напишите номер пункта действия:\n ");
 
                 switch (int.Parse(Console.ReadLine()))
@@ -66,11 +66,15 @@ namespace Magazin
                         AddProcedur();
                         break;
 
-                    case 3: // *Покупка* продукта
+                    case 3: // Удаление продукции из списка или массива
+                        RemoveProduct();
+                        break;
+
+                    case 4: // *Покупка* продукта
                         BuyProduct();
                         break;
 
-                    case 4: // Корзина
+                    case 5: // Корзина
                         CartList();
                         break;
 
@@ -109,7 +113,7 @@ namespace Magazin
         }
         #endregion
 
-        // Добавление, удаление, изминение продуктов в магазине.
+        // Добавление, удаление продуктов в магазине.
         #region
         void AddProcedur()
         {
@@ -137,6 +141,46 @@ namespace Magazin
             switch (Console.ReadLine())
             {
                 case "Да" or "Нет":
+                    AddProcedur();
+                    break;
+                case "Нет" or "нет":
+                    MainMenu();
+                    break;
+            }
+        }
+
+        void RemoveProduct()
+        {
+            Console.Clear();
+
+            if (Items.Count > 0)
+            {
+                Console.WriteLine("Все продукты доступные для удаления: ");
+                for (int i = 0; i < Items.Count; i++)
+                {
+                    Console.WriteLine($"{Items[i].NAME} items");
+                }
+            }
+
+            Console.WriteLine("Напиши название продукта с заглавной буквы: ");
+            string Name = Console.ReadLine();
+
+            for (int i = 0; i < Items.Count; i++)
+            {
+                if (Items[i].NAME == Name) 
+                {
+                    Items.RemoveAt(i);
+                    break; 
+                }
+            }
+
+            Console.WriteLine("Продукт успешно удалён!");
+            Thread.Sleep(1500);
+            Console.WriteLine("Желаете продолжить?");
+
+            switch (Console.ReadLine())
+            {
+                case "Да" or "да":
                     AddProcedur();
                     break;
                 case "Нет" or "нет":

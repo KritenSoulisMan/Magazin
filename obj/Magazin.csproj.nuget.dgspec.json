@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rmatv\\source\\repos\\Test\\Magazin.csproj": {}
+    "C:\\Users\\rmatv\\OneDrive\\Dokumente\\GitHub\\Magazin\\Magazin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rmatv\\source\\repos\\Test\\Magazin.csproj": {
+    "C:\\Users\\rmatv\\OneDrive\\Dokumente\\GitHub\\Magazin\\Magazin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rmatv\\source\\repos\\Test\\Magazin.csproj",
+        "projectUniqueName": "C:\\Users\\rmatv\\OneDrive\\Dokumente\\GitHub\\Magazin\\Magazin.csproj",
         "projectName": "Magazin",
-        "projectPath": "C:\\Users\\rmatv\\source\\repos\\Test\\Magazin.csproj",
+        "projectPath": "C:\\Users\\rmatv\\OneDrive\\Dokumente\\GitHub\\Magazin\\Magazin.csproj",
         "packagesPath": "C:\\Users\\rmatv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rmatv\\source\\repos\\Test\\obj\\",
+        "outputPath": "C:\\Users\\rmatv\\OneDrive\\Dokumente\\GitHub\\Magazin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rmatv\\AppData\\Roaming\\NuGet\\NuGet.Config",
