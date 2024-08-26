@@ -1,0 +1,15 @@
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\bin\Debug\net8.0\Magazin.exe
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\bin\Debug\net8.0\Magazin.deps.json
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\bin\Debug\net8.0\Magazin.runtimeconfig.json
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\bin\Debug\net8.0\Magazin.dll
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\bin\Debug\net8.0\Magazin.pdb
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\obj\Debug\net8.0\Magazin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\obj\Debug\net8.0\Magazin.AssemblyInfoInputs.cache
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\obj\Debug\net8.0\Magazin.AssemblyInfo.cs
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\obj\Debug\net8.0\Magazin.csproj.CoreCompileInputs.cache
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\obj\Debug\net8.0\Magazin.sourcelink.json
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\obj\Debug\net8.0\Magazin.dll
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\obj\Debug\net8.0\refint\Magazin.dll
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\obj\Debug\net8.0\Magazin.pdb
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\obj\Debug\net8.0\Magazin.genruntimeconfig.cache
+C:\Users\rmatv\OneDrive\Dokumente\GitHub\Magazin\obj\Debug\net8.0\ref\Magazin.dll

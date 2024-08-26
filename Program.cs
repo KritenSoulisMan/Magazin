@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Magazin
 {
-    // Начало программы
+    // Начало программы. class Program
     #region
     class Program
     {
@@ -13,21 +13,21 @@ namespace Magazin
             // Задача: создать подобие работы БД магазина, используя массивы, как хранилище данных. Мы выступаем в роли покупателя и продовца одновременно.
             // В задаче должно присутствовать 2 массива, 1 цена и 2 название товара, сопоставление товара и цены должны быть в ID 1 к 1.
 
-            // Старт программы
+            // Старт программы.
             #region
             Console.WriteLine("Старт програмы...");
             Console.Write("Програма находится на Раней стадии разработки...\n" +
                 "Напишите 'Старт' для входа в систему: ");
 
-            string n = Console.ReadLine();
-            if (n == "Старт")
+            switch (Console.ReadLine())
             {
-                Magazin magazin = new Magazin();
-                magazin.MainMenu();
-            }
-            else
-            {
-                Console.WriteLine("Проверьте ошибки и повторите попытку позже...");
+                case "Старт" or "старт":
+                    Magazin magazin = new Magazin();
+                    magazin.MainMenu();
+                    break;
+                default:
+                    Console.WriteLine("Проверьте ошибки и повторите попытку позже...");
+                    break;
             }
             #endregion
         }
@@ -41,7 +41,7 @@ namespace Magazin
         List<Item> Items = new List<Item>();
         List<Cart> СartItems = new List<Cart>();
 
-        // Главное меню магазина
+        // Главное меню магазина.
         #region
         public void MainMenu()
         {
@@ -55,32 +55,41 @@ namespace Magazin
                     "4. Купить продукт\n" +
                     "5. Корзина товаров\n" +
                     "Напишите номер пункта действия:\n ");
-
-                switch (int.Parse(Console.ReadLine()))
+                try
                 {
-                    case 1: // Вывод списка
-                        ShowProduct();
-                        break;
+                    switch (int.Parse(Console.ReadLine()))
+                    {
+                        case 1: // Вывод списка
+                            ShowProduct();
+                            break;
 
-                    case 2: // Добавление продукции в список или массив
-                        AddProcedur();
-                        break;
+                        case 2: // Добавление продукции в список или массив
+                            AddProcedur();
+                            break;
 
-                    case 3: // Удаление продукции из списка или массива
-                        RemoveProduct();
-                        break;
+                        case 3: // Удаление продукции из списка или массива
+                            RemoveProduct();
+                            break;
 
-                    case 4: // *Покупка* продукта
-                        BuyProduct();
-                        break;
+                        case 4: // *Покупка* продукта
+                            BuyProduct();
+                            break;
 
-                    case 5: // Корзина
-                        CartList();
-                        break;
+                        case 5: // Корзина
+                            CartList();
+                            break;
 
-                    default: // Отсутствующий вариант
-                        Console.WriteLine("Такой вариант не риализован!");
-                        break;
+                        default: // Ошибка
+                            Console.WriteLine("Неверно набранный номер пункта...");
+                            Thread.Sleep(1500);
+                            break;
+                    }
+                }
+                catch
+                {
+                    Console.Clear();
+                    Console.WriteLine("Неправильно набраный номер пункта...");
+                    Thread.Sleep(1500);
                 }
             }
         }
@@ -92,26 +101,31 @@ namespace Magazin
         {
             if (Items.Count > 0)
             {
+                Console.Clear();
                 Console.WriteLine("Продукты доступные сейчас: ");
                 for (int i = 0; i < Items.Count; i++)
                 {
                     Console.WriteLine($"Название: {Items[i].NAME}. Цена: {Items[i].COST}руб.");
+                    Thread.Sleep(500);
                 }
+
+                Console.WriteLine("Напишите 'Главное меню', когда завершите просмотр.");
+                string word = Console.ReadLine();
+                if (word == "Главное меню")
+                {
+                    MainMenu();
+                }
+                
             }
             else
             {
                 Console.WriteLine("ВНИМАНИЕ: Товары времено отсутствуют!");
-                Console.WriteLine("Желаете перейти в главное меню? (Да/Нет)");
-                string selector = Console.ReadLine();
-                switch (selector)
-                {
-                    case "Да" or "да":
-                        MainMenu();
-                        break;
-                }
+                Thread.Sleep(1500);
+                MainMenu();
             }
         }
         #endregion
+
 
         // Добавление, удаление продуктов в магазине.
         #region
@@ -140,7 +154,7 @@ namespace Magazin
 
             switch (Console.ReadLine())
             {
-                case "Да" or "Нет":
+                case "Да" or "да":
                     AddProcedur();
                     break;
                 case "Нет" or "нет":
@@ -158,7 +172,7 @@ namespace Magazin
                 Console.WriteLine("Все продукты доступные для удаления: ");
                 for (int i = 0; i < Items.Count; i++)
                 {
-                    Console.WriteLine($"{Items[i].NAME} items");
+                    Console.WriteLine($"Название: {Items[i].NAME}. Цена: {Items[i].COST}руб.");
                 }
             }
 
@@ -281,6 +295,7 @@ namespace Magazin
         #region
         void CartList()
         {
+            Console.Clear();
             if (СartItems.Count > 0)
             {
                 Console.WriteLine($"Сейчас у вас в корзине имеется: ");
@@ -292,17 +307,8 @@ namespace Magazin
             else
             {
                 Console.WriteLine("Ваша корзина пуста...");
-                Console.WriteLine("Желаете перейти в главное меню? (Да/Нет)");
-
-                switch (Console.ReadLine())
-                {
-                    case "Да" or "да":
-                        MainMenu();
-                        break;
-                    case "Нет" or "нет":
-                        Console.WriteLine("Ну тогда оставайтесь тут.");
-                        break;
-                }
+                Thread.Sleep(1500);
+                MainMenu();
             }
         }
         #endregion
