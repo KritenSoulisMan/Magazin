@@ -95,7 +95,7 @@ namespace Magazin
         }
         #endregion
 
-        // Просмотр всех продуктов в магазине.
+        // Просмотр продуктов в магазине.
         #region
         void ShowProduct()
         {
@@ -125,7 +125,6 @@ namespace Magazin
             }
         }
         #endregion
-
 
         // Добавление, удаление продуктов в магазине.
         #region
@@ -320,7 +319,7 @@ namespace Magazin
     class Item // Попытка 1, сделать через List
     {
         public string NAME { get; set; }
-        public int COST {  get; set; } 
+        public int COST {  get; set; }
     }
 
     class Cart
